@@ -61,9 +61,9 @@ class StockPackOperation(models.Model):
             sum_price = 0.0
             sum_discount = 0.0
             for sale_line in sale_lines:
-                sum_qty += sale_line.product_qty
-                sum_price += sale_line.price_unit * sale_line.product_qty
-                sum_discount += sale_line.discount * sale_line.product_qty
+                sum_qty += sale_line.product_uom_qty
+                sum_price += sale_line.price_unit * sale_line.product_uom_qty
+                sum_discount += sale_line.discount * sale_line.product_uom_qty
             price_unit = sum_price / (sum_qty or 1)
             discount = sum_discount / (sum_qty or 1)
         sale_line = sale_lines[:1]
