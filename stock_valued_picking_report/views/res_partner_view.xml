@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <field name="user_id" position="after">
                 <field name="valued_picking"
-                        attrs="{'invisible': [('customer', '=', False)]}"/>
+                       attrs="{'invisible': [('customer', '=', False)]}"/>
             </field>
         </field>
     </record>

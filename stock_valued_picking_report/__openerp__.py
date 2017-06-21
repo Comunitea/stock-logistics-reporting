@@ -5,7 +5,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Valued picking list",
+    "name": "Stock Valued Picking Report",
+    "summary": "Adding Valued Picking on Delivery Slip report",
     "version": "9.0.1.0.0",
     "author": "Tecnativa, "
               "Odoo Community Association (OCA)",
@@ -20,7 +21,6 @@
     ],
     "data": [
         'views/res_partner_view.xml',
-        'views/stock_picking_view.xml',
         'report/stock_picking_valued_report.xml',
     ],
     "installable": True

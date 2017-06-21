@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===============
-Valued pickings
-===============
+===========================
+Stock Valued Picking Report
+===========================
 
-Add amount information to picking list report.
+Add amount information to Delivery Slip report.
 You can select at partner level if picking list report must be valued or not.
 
 
@@ -15,10 +15,12 @@ Usage
 
 To use this module, you need:
 
-#. Go to Inventory > Operations > All Transfers
-#. Select or create **outgoing** type picking
+#. Go to Customers
 #. Set valued field
-#. Go to Print > Picking Operations
+#. Create a Sale Order with stockable products
+#. Confirm Sale Order
+#. Click Deliveries button
+#. Go to Print > Delivery Slip
 
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas

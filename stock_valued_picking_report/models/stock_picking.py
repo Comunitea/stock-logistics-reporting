@@ -15,20 +15,18 @@ class StockPicking(models.Model):
         related='sale_id.currency_id',
         string='Currency')
     amount_untaxed = fields.Monetary(
-        compute='_amount_all',
+        compute='_compute_amount_all',
         string='Untaxed Amount')
     amount_tax = fields.Monetary(
-        compute='_amount_all',
+        compute='_compute_amount_all',
         string='Taxes')
     amount_total = fields.Monetary(
-        compute='_amount_all',
+        compute='_compute_amount_all',
         string='Total')
 
     @api.multi
-    def _amount_all(self):
+    def _compute_amount_all(self):
         for pick in self:
-            pick.amount_total = sum(pick.pack_operation_ids.mapped(
-                'sale_price_subtotal'))
             amount_untaxed = sum(pick.pack_operation_ids.mapped(
                 'sale_price_subtotal'))
             amount_tax = sum(pick.pack_operation_ids.mapped(
