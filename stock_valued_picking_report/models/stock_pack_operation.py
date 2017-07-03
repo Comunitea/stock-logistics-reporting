@@ -66,10 +66,11 @@ class StockPackOperation(models.Model):
                 sum_discount += sale_line.discount * sale_line.product_uom_qty
             price_unit = sum_price / (sum_qty or 1)
             discount = sum_discount / (sum_qty or 1)
+        price_reduce = price_unit * (1 - (discount or 0.0) / 100.0)
         sale_line = sale_lines[:1]
         sale_tax = sale_line.tax_id
         taxes = sale_tax.compute_all(
-            price_unit=price_unit,
+            price_unit=price_reduce,
             currency=sale_line.currency_id,
             quantity=self.product_qty,
             product=sale_line.product_id,
